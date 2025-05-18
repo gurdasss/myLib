@@ -23,6 +23,18 @@ public:
     inline void setStartPos(const Vector2 &position) { m_startPos = position; }
     inline const Vector2 &getStartPos() const { return m_startPos; }
 
+    inline void setStartPosX(float x) { m_startPos.x = x; }
+    inline void setStartPosY(float y) { m_startPos.y = y; }
+
+    inline float getStartPosX() const { return m_startPos.x; }
+    inline float getStartPosY() const { return m_startPos.y; }
+
+    inline void setEndPosX(float x) { m_endPos.x = x; }
+    inline void setEndPosY(float y) { m_endPos.y = y; }
+
+    inline float getEndPosX() const { return m_endPos.x; }
+    inline float getEndPosY() const { return m_endPos.y; }
+
     inline void setEndPos(const Vector2 &position) { m_endPos = position; }
     inline const Vector2 &getEndPos() const { return m_endPos; }
 

@@ -37,6 +37,12 @@ public:
         return Vector2{m_rectangle.x, m_rectangle.y};
     }
 
+    inline void setX(float x) { m_rectangle.x = x; }
+    inline float getX() const { return m_rectangle.x; }
+
+    inline void setY(float y) { m_rectangle.y = y; }
+    inline float getY() const { return m_rectangle.y; }
+
     inline void setWidth(float width) { m_rectangle.width = width; }
     inline float getWidth() const { return m_rectangle.width; }
 
