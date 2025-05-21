@@ -4,6 +4,12 @@
 #ifndef RECTANGLE_2D_H
 #define RECTANGLE_2D_H
 
+/*
+    member functions declared (and defined) in class type definition
+    are implicitly inline.
+    As a result, it's exempt from ODR (One-Definition-Rule)
+*/
+
 class Rectangle2D : public Colors
 {
 public:
@@ -14,8 +20,10 @@ public:
         constructor for us.
     */
     Rectangle2D() = default;
+
+    // delegate the member initialization to another constructor
     Rectangle2D(float width, float height)
-        : m_rectangle{0, 0, width, height}
+        : Rectangle2D{0, 0, width, height}
     {
         // a constructor's body is typically left empty.
     }
@@ -26,30 +34,30 @@ public:
         // a constructor's body is typically left empty.
     }
 
-    inline void setPosition(const Vector2 &position)
+    void setPosition(const Vector2 &position)
     {
         m_rectangle.x = position.x;
         m_rectangle.y = position.y;
     }
 
-    inline Vector2 getPosition() const
+    Vector2 getPosition() const
     {
         return Vector2{m_rectangle.x, m_rectangle.y};
     }
 
-    inline void setX(float x) { m_rectangle.x = x; }
-    inline float getX() const { return m_rectangle.x; }
+    void setX(float x) { m_rectangle.x = x; }
+    float getX() const { return m_rectangle.x; }
 
-    inline void setY(float y) { m_rectangle.y = y; }
-    inline float getY() const { return m_rectangle.y; }
+    void setY(float y) { m_rectangle.y = y; }
+    float getY() const { return m_rectangle.y; }
 
-    inline void setWidth(float width) { m_rectangle.width = width; }
-    inline float getWidth() const { return m_rectangle.width; }
+    void setWidth(float width) { m_rectangle.width = width; }
+    float getWidth() const { return m_rectangle.width; }
 
-    inline void setHeight(float height) { m_rectangle.height = height; }
-    inline float getHeight() const { return m_rectangle.height; }
+    void setHeight(float height) { m_rectangle.height = height; }
+    float getHeight() const { return m_rectangle.height; }
 
-    inline const Rectangle &getRectangle() const { return m_rectangle; }
+    const Rectangle &getRectangle() const { return m_rectangle; }
 
 private:
     Rectangle m_rectangle{};

@@ -4,6 +4,12 @@
 #ifndef CIRCLE_2D_H
 #define CIRCLE_2D_H
 
+/*
+    member functions declared (and defined) in class type definition
+    are implicitly inline.
+    As a result, it's exempt from ODR (One-Definition-Rule)
+*/
+
 class Circle2D : public Colors
 {
 public:
@@ -20,17 +26,17 @@ public:
     {
     }
 
-    inline void setPosition(const Vector2 &position) { m_center = position; }
-    inline const Vector2 &getPosition() const { return m_center; }
+    void setPosition(const Vector2 &position) { m_center = position; }
+    const Vector2 &getPosition() const { return m_center; }
 
-    inline void setX(float x) { m_center.x = x; }
-    inline float getX() const { return m_center.x; }
+    void setX(float x) { m_center.x = x; }
+    float getX() const { return m_center.x; }
 
-    inline void setY(float y) { m_center.y = y; }
-    inline float getY() const { return m_center.y; }
+    void setY(float y) { m_center.y = y; }
+    float getY() const { return m_center.y; }
 
-    inline void setRadius(float radius) { m_radius = radius; }
-    inline float getRadius() const { return m_radius; }
+    void setRadius(float radius) { m_radius = radius; }
+    float getRadius() const { return m_radius; }
 
 private:
     Vector2 m_center{};

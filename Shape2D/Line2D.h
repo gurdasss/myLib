@@ -4,6 +4,12 @@
 #ifndef LINE_2D_H
 #define LINE_2D_H
 
+/*
+    member functions declared (and defined) in class type definition
+    are implicitly inline.
+    As a result, it's exempt from ODR (One-Definition-Rule)
+*/
+
 class Line2D : public Colors
 {
 public:
@@ -20,23 +26,23 @@ public:
     {
         // a constructor's body is typically left empty.
     }
-    inline void setStartPos(const Vector2 &position) { m_startPos = position; }
-    inline const Vector2 &getStartPos() const { return m_startPos; }
+    void setStartPos(const Vector2 &position) { m_startPos = position; }
+    const Vector2 &getStartPos() const { return m_startPos; }
 
-    inline void setStartPosX(float x) { m_startPos.x = x; }
-    inline void setStartPosY(float y) { m_startPos.y = y; }
+    void setStartPosX(float x) { m_startPos.x = x; }
+    void setStartPosY(float y) { m_startPos.y = y; }
 
-    inline float getStartPosX() const { return m_startPos.x; }
-    inline float getStartPosY() const { return m_startPos.y; }
+    float getStartPosX() const { return m_startPos.x; }
+    float getStartPosY() const { return m_startPos.y; }
 
-    inline void setEndPosX(float x) { m_endPos.x = x; }
-    inline void setEndPosY(float y) { m_endPos.y = y; }
+    void setEndPosX(float x) { m_endPos.x = x; }
+    void setEndPosY(float y) { m_endPos.y = y; }
 
-    inline float getEndPosX() const { return m_endPos.x; }
-    inline float getEndPosY() const { return m_endPos.y; }
+    float getEndPosX() const { return m_endPos.x; }
+    float getEndPosY() const { return m_endPos.y; }
 
-    inline void setEndPos(const Vector2 &position) { m_endPos = position; }
-    inline const Vector2 &getEndPos() const { return m_endPos; }
+    void setEndPos(const Vector2 &position) { m_endPos = position; }
+    const Vector2 &getEndPos() const { return m_endPos; }
 
 private:
     Vector2 m_startPos{};
